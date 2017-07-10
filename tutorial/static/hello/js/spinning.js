@@ -4,7 +4,7 @@ define(function(require,exports,module){
 	function Spinning(container){
 
 		this.container = $(container);
-		this.icons = this.container,children();
+		this.icons = this.container.children();
 		this.spinnings = [];
 
 	}
@@ -37,6 +37,7 @@ define(function(require,exports,module){
 				node.fadeTo(250,.6).css('zIndex',1000);
 				timer && clearTimeout(timer);
 				timer = setTimeout(spin,Math.ceil(random(10000)));
+
 			});
 
 

@@ -9,37 +9,45 @@
 </head>
 
 <body>
-	<div id="container">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKb32QfE.png" alt="H" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKb2rJHI.png" alt="e" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKeZrUpg.png" alt="l" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqM4u3Ejk.png" alt="l" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKoKV2Sa.png" alt="o" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKb4JU4K.png" alt="," width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKojFDLY.png" alt="S" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKb2sBO8.png" alt="e" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKb2LmXk.png" alt="a" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKb1jcWC.png" alt="J" width="44" height="44">
-		<img src="https://i.alipayobjects.com/e/201211/1cqKojb72y.png" alt="S" width="44" height="44">
-	</div>
+    <div id="container">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKb32QfE.png" alt="H" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKb2rJHI.png" alt="e" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKeZrUpg.png" alt="l" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqM4u3Ejk.png" alt="l" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKoKV2Sa.png" alt="o" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKb4JU4K.png" alt="," width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKojFDLY.png" alt="S" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKb2sBO8.png" alt="e" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKb2LmXk.png" alt="a" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKb1jcWC.png" alt="J" width="44" height="44">
+        <img src="https://i.alipayobjects.com/e/201211/1cqKojb72y.png" alt="S" width="44" height="44">
+    </div>
     <script>
     seajs.config({
-    	base:"../../bower_components/",
-    	alias:{
-    		"jquery":"/bower_components/jquery/dist/jquery.js",
-    		"name":"/tutorial/static/hello/js/module.js"
-    	}
+        base: "http://localhost/tutorial/", //base的默认值为sea.js文件所在的路径
+
+        paths: {
+            plugin: '/bower_components/',
+            module: '/tutorial/static/hello/js/'
+        },
+        alias: {
+            "jquery": "plugin/jquery/dist/jquery",
+            "name": "module/module",
+            'spinning': 'module/spinning'
+        }
     });
 
     //For development
-    if(location.href.indexOf("?dev")>0)
-    {
-    	seajs.use("../static/hello/js/main");
-    }
-    else{
-    	seajs.use('../static/hello/js/main');
-    }
-    
+    seajs.use("../static/hello/js/main"); //相对于当前文件的路径
+
+
+    // if(location.href.indexOf("?dev")>0)
+    // {
+    //  seajs.use("../static/hello/js/main");
+    // }
+    // else{
+    //  seajs.use('../static/hello/js/main');
+    // }
     </script>
 </body>
 
